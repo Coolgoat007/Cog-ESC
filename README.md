@@ -3,6 +3,7 @@
 > **Paper**: [arXiv link — to be added upon submission]
 > **Base framework**: Built on [CSO (Chain-of-Strategy Optimization)](https://arxiv.org/abs/2503.05362)
 > **Training data**: [ESC-Pro on HuggingFace](https://huggingface.co/datasets/XingYuSSS/ESC-Pro)
+> **Evaluation data**: [Cog-ESC on HuggingFace](https://huggingface.co/datasets/shunqiziran123/Cog-ESC) — predictions, pointwise scores, verbosity tax results
 
 ## Overview
 
