@@ -1,0 +1,9 @@
+==================================================
+Results for /root/autodl-tmp/LLaMA-Factory/saves/Llama-3.1-8B-Instruct/lora/eval_base_qwens/generated_predictions.jsonl (Total: 682)
+==================================================
+>>> 1. Empathy:             3.73 / 4.0
+>>> 2. Information:         3.33 / 4.0
+>>> 3. Humanoid:            3.59 / 4.0
+>>> 4. Strategies:          3.74 / 4.0
+>>> 5. Cognitive Alignment: 3.87 / 4.0
+==================================================

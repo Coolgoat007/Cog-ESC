@@ -1,0 +1,161 @@
+## 主要问题与风险
+
+最大风险是 **Claude 平均 4.3 词太异常**。
+
+这个结果非常强，但也非常容易被 reviewer 质疑。常见质疑会是：
+
+> Did the authors set max tokens too low?
+> Was Claude prompted differently?
+> Was there an API truncation issue?
+> Did the word-count script fail?
+> Are refusal/template responses included?
+> Why would Claude-Sonnet average only 4.3 words in ESC?
+
+所以现在必须在实验设置或 appendix 中补一句非常明确的说明：
+
+```latex
+For all commercial baselines, we used the same dialogue context, response-generation instruction, decoding setting, and maximum output length as the open-source models. No brevity constraint was imposed. The extremely short outputs therefore reflect the model's response behavior under this protocol rather than an imposed length limit.
+```
+
+如果实际上商业模型用了不同 prompt 或 max token，那就必须如实写清楚，并弱化结论。
+
+第二个风险是 **Pairwise V2 结果过于压倒性**。
+
+Llama-Cognitive vs GPT-4o 的 99.0% 胜率非常惊人。这个结果可以成为亮点，但也会让 reviewer 怀疑 V2 prompt 是否过度偏向长回复或结构化回复。
+
+你现在已经写了 “V2 is diagnostic, not universally superior”，这是好的。但还不够。建议在 Pairwise 表格中增加：
+
+* decisive win rate；
+* binomial test p-value；
+* 或 confidence interval；
+* 最好加一列平均长度，显示 V2 并不是简单按长度选。
+
+尤其要避免让 V2 看起来像“奖励长回复”的 prompt。你需要强调：V2 不是鼓励冗长，而是鼓励 **validation + information + strategy + pacing-aware support**。
+
+第三个问题是 **商业基线部分缺少 generation setting 的正式说明**。
+
+现在 Introduction 和 Results 都讲了 commercial baselines，但 Experiments 里没有单独的小段交代这些模型如何生成。建议在 Experiments 里加一个 paragraph：
+
+```latex
+\paragraph{Commercial Baseline Evaluation.}
+We additionally evaluate GPT-4o, GPT-4o-mini, and Claude-Sonnet on the same 682-instance test set. All commercial baselines receive the same dialogue context and supporter-generation instruction as the open-source models. We apply the same automatic sequencing, point-wise, and V2 pairwise evaluation protocols. No explicit length constraint is imposed during generation.
+```
+
+这个非常关键。否则 Results 里的强结论会显得突然。
+
+第四个问题是 **原始 sequencing 表和 commercial sequencing 表中的小模型数字不一致**。
+
+原表：
+
+* Llama-Base: 67.6 / 32.4
+* Llama-Cognitive: 54.6 / 45.6
+* Qwen-Base: 48.8 / 51.2
+* Qwen-Cognitive: 52.5 / 47.7
+
+新 commercial 表：
+
+* Llama-Base: 67.3 / 32.7
+* Llama-Cognitive: 55.0 / 45.2
+* Qwen-Base: 47.7 / 52.3
+* Qwen-Cognitive: 51.9 / 48.1
+
+差异不大，但 reviewer 会注意到。你需要二选一：
+
+1. 统一所有表格数值；
+2. 或解释 commercial 表是在同一 682 test set 上重新跑的版本，而原表可能是另一版 evaluation。
+
+如果都是 682 条测试集，最好统一。否则会显得实验管理不够严谨。
+
+第五个问题是 **Contributions 没有更新强基线贡献**。
+
+你 Introduction 加了 strong baseline motivation，Abstract 和 Conclusion 也加了，但 Contributions 还停留在原来的三点。建议新增第四个 contribution，或者把第三点扩展：
+
+```latex
+\item We further compare cognitive-aligned 7B/8B models with strong commercial baselines and identify \textit{hollow validation}, where models obtain high validation-first rates through extremely brief responses with limited therapeutic substance. This comparison further validates the need for therapeutic-depth-oriented evaluation.
+```
+
+这会让论文结构更闭环。
+
+第六个问题是 **Discussion 没有专门吸收 hollow validation**。
+
+Results 和 Conclusion 现在讲了 hollow validation，但 Discussion 的三段仍然是旧结构：
+
+1. Therapeutic Depth vs Conversational Pacing
+2. Verbosity Tax
+3. Dataset Effects vs Model Priors
+
+建议加一个新段落，放在 Verbosity Tax 前后：
+
+```latex
+\paragraph{Hollow Validation as an Opposite Pacing Failure.}
+```
+
+这样 Discussion 会更完整。否则新实验像是 Results 里的强插入，而不是全文理论框架的一部分。
+
+第七个问题是 **Limitations 里有一句重复**。
+
+这一段重复了两次：
+
+> We fully acknowledge that human judgments---particularly from domain experts or trained peer supporters---are ultimately indispensable for validating therapeutic pacing.
+
+而且第二次破折号格式还不统一。这个需要删掉一遍。这个小问题会影响论文 polished 程度。
+
+## 关于“hollow validation”这个概念
+
+这是当前版本最有潜力的理论贡献之一。建议保留，而且可以稍微强化定义。
+
+现在的定义是：
+
+> short, emotionally polite responses that appear well-paced under coarse sequencing probes but provide limited information, strategy, or cognitive support.
+
+这个很好。可以再加一句限定，避免过度临床化：
+
+```latex
+We use this term descriptively rather than clinically: it denotes a metric-level failure mode in which emotional acknowledgment is present, but the response lacks sufficient supportive development.
+```
+
+这会让概念更安全。
+
+## 关于“Verbosity Tax”的逻辑
+
+现在版本把 Verbosity Tax 扩展得更好了，但需要稍微理顺。
+
+之前 Verbosity Tax 是：
+
+> 标准评估惩罚长的、结构化的治疗回复。
+
+现在 strong baseline 又显示：
+
+> sequencing metric 奖励极短回复，因为短回复更不容易 premature advice。
+
+这其实是两个不同但相关的 bias：
+
+1. **Point-wise / standard pairwise bias**：长回复被认为不够 human-like；
+2. **Sequencing metric bias**：短回复更容易被判为 validation-first，因为它没有进入 advice。
+
+建议在 Discussion 里明确区分：
+
+```latex
+The commercial-baseline results suggest that brevity bias appears in two forms. Standard preference evaluation may penalize long structured responses, while coarse sequencing evaluation may over-reward short responses that avoid intervention altogether.
+```
+
+这会让 Verbosity Tax 更理论化，而不是只停留在现象描述。
+
+## 关于小模型超越大模型的表述
+
+现在 Conclusion 里写：
+
+> small models trained with cognitively guided preference data can exceed stronger commercial models in therapeutic depth under the same evaluation setting.
+
+这个表述是合适的，因为加了 “under the same evaluation setting”。不要写成更泛化的：
+
+> small models are better than GPT-4o/Claude in ESC.
+
+建议全文都保持这种谨慎表述：
+
+* “under our therapeutic-depth evaluation”
+* “in this ESC benchmark”
+* “within our evaluation protocol”
+* “suggests rather than proves”
+
+这样更符合 ACL/EMNLP 风格。

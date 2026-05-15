@@ -1,0 +1,10 @@
+
+============================================================
+gpt4o_mini
+============================================================
+N                         : 682
+Avg length                : 55.66
+Validation-First Rate     : 88.27%
+Premature-Advice Rate     : 11.44%
+Details                   : sequence_eval_with_baselines_results/gpt4o_mini_sequence_details.jsonl
+============================================================

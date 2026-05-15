@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(JUDGE_MODEL=gpt-4o python3 supplemental_eval/task3_lc_vs_gpt4o_gpt4o_judge.py)",
+      "Bash(tee supplemental_eval/task3_run.log)",
+      "Bash(echo \"Task 3 launched, PID=$!\")"
+    ]
+  }
+}

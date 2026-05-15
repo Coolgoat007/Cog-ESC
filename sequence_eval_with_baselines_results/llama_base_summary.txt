@@ -1,0 +1,10 @@
+
+============================================================
+llama_base
+============================================================
+N                         : 682
+Avg length                : 120.51
+Validation-First Rate     : 77.71%
+Premature-Advice Rate     : 22.14%
+Details                   : sequence_eval_with_baselines_results/llama_base_sequence_details.jsonl
+============================================================

@@ -1,0 +1,10 @@
+
+============================================================
+llama_cognitive
+============================================================
+N                         : 682
+Avg length                : 152.99
+Validation-First Rate     : 74.63%
+Premature-Advice Rate     : 24.93%
+Details                   : sequence_eval_with_baselines_results/llama_cognitive_sequence_details.jsonl
+============================================================

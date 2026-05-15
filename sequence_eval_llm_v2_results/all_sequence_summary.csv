@@ -1,0 +1,7 @@
+name,n,avg_length,validation_first_rate,premature_advice_rate
+llama_base,682,120.5117,0.675953,0.324047
+llama_cognitive,682,152.9912,0.545455,0.456012
+llama_ablation,682,116.4868,0.689150,0.310850
+qwen_base,682,106.5264,0.488270,0.511730
+qwen_cognitive,682,78.8548,0.524927,0.476540
+qwen_ablation,682,99.9223,0.450147,0.549853
