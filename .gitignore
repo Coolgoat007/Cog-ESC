@@ -7,6 +7,19 @@ tmp/
 *.xlsx
 result*
 *.log
+*.csv
+*.jsonl
+*.txt
+*.tex
+
+# Internal / dev-only files
+.claude/
+.env
+
+tmp/
+*.xlsx
+result*
+*.log
 
 # Internal / dev-only files
 .claude/
