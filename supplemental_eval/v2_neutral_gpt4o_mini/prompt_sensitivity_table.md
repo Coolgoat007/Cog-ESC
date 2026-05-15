@@ -1,0 +1,10 @@
+# Prompt Sensitivity Table
+
+| Comparison | V1 Standard | V2-Neutral (new) | V2 Depth |
+|---|---|---|---|
+| Llama-Cognitive vs Llama-Base | 37.1% | 47.5% | 57.0% |
+| Qwen-Cognitive vs Qwen-Base | 36.4% | 55.5% | 47.5% |
+| Llama-Cognitive vs GPT-4o | N/A | 23.0% | 71.6% |
+| Llama-Cognitive vs Claude-Sonnet | N/A | 10.0% | 70.2% |
+| Qwen-Cognitive vs GPT-4o | N/A | 21.0% | 52.1% |
+| Qwen-Cognitive vs Claude-Sonnet | N/A | 9.0% | 58.4% |

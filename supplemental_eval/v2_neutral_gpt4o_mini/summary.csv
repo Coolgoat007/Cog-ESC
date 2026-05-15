@@ -1,0 +1,7 @@
+Comparison,A_Wins,B_Wins,Ties,Errors,N,V1_Standard,V2_Neutral,V2_Depth,Diff_pp,Decisive_A
+Llama-Cognitive vs Llama-Base,95,101,4,0,200,37.1%,47.5%,57.0%,-9.5,48.5%
+Qwen-Cognitive vs Qwen-Base,111,86,3,0,200,36.4%,55.5%,47.5%,+8.0,56.3%
+Llama-Cognitive vs GPT-4o,46,154,0,0,200,N/A,23.0%,71.6%,-48.6,23.0%
+Llama-Cognitive vs Claude-Sonnet,20,180,0,0,200,N/A,10.0%,70.2%,-60.2,10.0%
+Qwen-Cognitive vs GPT-4o,42,158,0,0,200,N/A,21.0%,52.1%,-31.1,21.0%
+Qwen-Cognitive vs Claude-Sonnet,18,182,0,0,200,N/A,9.0%,58.4%,-49.4,9.0%

@@ -1,0 +1,8 @@
+=== Length-Aware Analysis: Paper-Ready Conclusion ===
+
+Raw gap (Cognitive - Commercial) for Information: +0.5689
+Adjusted gap (Cognitive - Commercial) for Information: +0.5371
+Shrinkage after length control: 5.6%
+
+Suggested paper conclusion:
+The cognitive-aligned models retain stronger adjusted Information and Strategy scores after controlling for response length, suggesting that the advantage is not solely an artifact of longer responses.

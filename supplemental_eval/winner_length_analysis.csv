@@ -1,0 +1,7 @@
+Comparison,Cog_N_wins,Opp_N_wins,CogWins_Cog_len,CogWins_Opp_len,OppWins_Cog_len,OppWins_Opp_len,OppWins_LenRatio
+Llama-Cognitive_vs_Llama-Base,95,101,172.3,115.5,143.1,125.8,1.14
+Qwen-Cognitive_vs_Qwen-Base,111,86,257.6,137.4,176.5,152.6,1.16
+Llama-Cognitive_vs_GPT-4o,46,154,173.8,69.2,152.3,75.8,2.01
+Llama-Cognitive_vs_Claude-Sonnet,20,180,194.9,68.0,153.0,81.4,1.88
+Qwen-Cognitive_vs_GPT-4o,42,158,292.2,68.8,200.7,75.7,2.65
+Qwen-Cognitive_vs_Claude-Sonnet,18,182,277.4,59.7,214.2,82.0,2.61

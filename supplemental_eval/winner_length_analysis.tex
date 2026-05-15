@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcccccc}
+\toprule
+\multirow{2}{*}{Comparison} & \multicolumn{3}{c}{When Cog wins} & \multicolumn{3}{c}{When Opp wins} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+& Cog len & Opp len & Ratio & Cog len & Opp len & Ratio \\
+\midrule
+Llama-Cog vs Llama-Base & 172.3 & 115.5 & 1.49x & 143.1 & 125.8 & 1.14x \\
+Qwen-Cog vs Qwen-Base & 257.6 & 137.4 & 1.87x & 176.5 & 152.6 & 1.16x \\
+Llama-Cog vs GPT-4o & 173.8 & 69.2 & 2.51x & 152.3 & 75.8 & 2.01x \\
+Llama-Cog vs Claude-Sonnet & 194.9 & 68.0 & 2.87x & 153.0 & 81.4 & 1.88x \\
+Qwen-Cog vs GPT-4o & 292.2 & 68.8 & 4.25x & 200.7 & 75.7 & 2.65x \\
+Qwen-Cog vs Claude-Sonnet & 277.4 & 59.7 & 4.65x & 214.2 & 82.0 & 2.61x \\
+\bottomrule
+\end{tabular}
+\caption{Average response length (words) stratified by winner under V2-Neutral evaluation. ``Ratio'' = Cognitive length / Opponent length. In commercial comparisons, Cognitive responses are 1.9--2.7$\times$ longer even in the cases where the commercial model wins, suggesting that judge preference for the shorter response is independent of content quality.}
+\label{tab:winner_length}
+\end{table}

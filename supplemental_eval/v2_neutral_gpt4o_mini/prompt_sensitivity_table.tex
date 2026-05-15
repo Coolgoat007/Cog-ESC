@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lccc}
+\toprule
+Comparison & V1 Standard & V2-Neutral & V2-Depth \\
+\midrule
+Llama-Cog vs Llama-Base & 37.1\% & 47.5\% & 57.0\% \\
+Qwen-Cog vs Qwen-Base & 36.4\% & 55.5\% & 47.5\% \\
+Llama-Cog vs GPT-4o & --\% & 23.0\% & 71.6\% \\
+Llama-Cog vs Claude-Sonnet & --\% & 10.0\% & 70.2\% \\
+Qwen-Cog vs GPT-4o & --\% & 21.0\% & 52.1\% \\
+Qwen-Cog vs Claude-Sonnet & --\% & 9.0\% & 58.4\% \\
+\bottomrule
+\end{tabular}
+\caption{Cognitive model win rates under three evaluation protocols (V1: standard pairwise; V2-Neutral: length-agnostic balanced; V2-Depth: therapeutic-depth-oriented). All results use GPT-4o-mini as judge on a 200-instance subset (seed=42). `--' indicates protocol was not applied to commercial comparisons.}
+\label{tab:prompt_sensitivity}
+\end{table}
