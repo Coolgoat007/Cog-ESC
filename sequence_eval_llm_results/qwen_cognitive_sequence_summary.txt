@@ -1,9 +1,0 @@
-============================================================
-qwen_cognitive
-============================================================
-N                         : 682
-Avg length                : 221.08
-Validation-First Rate     : 6.30%
-Premature-Advice Rate     : 96.19%
-Details                   : sequence_eval_llm_results/qwen_cognitive_sequence_details.jsonl
-============================================================

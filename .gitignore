@@ -6,6 +6,35 @@ result/
 tmp/
 *.xlsx
 result*
+*.log
+
+# Internal / dev-only files
+.claude/
+temp.py
+check_progress.py
+wait_and_*.sh
+fig.py gen_image.py
+generate_final_report.py
+fix_baselines.py
+regen_claude.py
+rerun_pointwise_gpt4o_mini_only.py
+sample_llama_cognitive_failures.py
+inspect_sequence_errors.py
+extract_best_cases.py
+run_all_evaluations.py
+analysis_length_vs_humanoid.py
+length_matched_pairwise.py
+sequence_eval_llm.py
+sequence_eval_llm_results/
+sequence_eval_rule.py
+pairwise_eval.py
+BASELINE_COMPARISON_README.md
+COMMERCIAL_BASELINE_RERUN_NOTES.md
+judge_of_chatgpt.txt
+ESC-Pro-ablation_no_validation_first.json
+*.png
+final_report_*.tex
+ablation_experiments_qwen/
 
 # Supplemental eval: internal working files
 supplemental_eval/*.log
@@ -17,6 +46,9 @@ supplemental_eval/final_report.md
 supplemental_eval/debug_report_llama_vs_gpt4o.md
 supplemental_eval/task3_multijudge.py
 supplemental_eval/monitor_progress.sh
+
+# Secrets
+.env
 
 # Paper source (keep in separate repo)
 paper.txt

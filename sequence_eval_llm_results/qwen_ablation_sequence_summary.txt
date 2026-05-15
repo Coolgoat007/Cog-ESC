@@ -1,9 +1,0 @@
-============================================================
-qwen_ablation
-============================================================
-N                         : 682
-Avg length                : 186.89
-Validation-First Rate     : 7.92%
-Premature-Advice Rate     : 93.40%
-Details                   : sequence_eval_llm_results/qwen_ablation_sequence_details.jsonl
-============================================================
