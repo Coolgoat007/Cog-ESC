@@ -3,7 +3,8 @@
 > **Paper**: [arXiv link — to be added upon submission]
 > **Base framework**: Built on [CSO (Chain-of-Strategy Optimization)](https://arxiv.org/abs/2503.05362)
 > **Training data**: [ESC-Pro on HuggingFace](https://huggingface.co/datasets/XingYuSSS/ESC-Pro)
-> **Evaluation data**: [Cog-ESC on HuggingFace](https://huggingface.co/datasets/shunqiziran123/Cog-ESC) — predictions, pointwise scores, verbosity tax results
+> **DPO preference data**: [Cog-ESC-DPO on HuggingFace](https://huggingface.co/datasets/shunqiziran123/Cog-ESC-DPO) — base and cognitive preference pairs
+> **Evaluation data**: [Cog-ESC-Eval on HuggingFace](https://huggingface.co/datasets/shunqiziran123/Cog-ESC-Eval) — predictions, pointwise scores, verbosity tax results
 
 ## Overview
 
@@ -83,7 +84,7 @@ See [`supplemental_eval/README.md`](supplemental_eval/README.md).
 | Qwen-Cognitive vs Claude-Sonnet | 9.0% | 58.4% |
 
 ### Length-controlled analysis
-After OLS regression controlling for response length, the cognitive-commercial Information score gap shrinks by only **5.6%**, confirming the advantage is not a length artifact.
+After OLS regression controlling for response length, the cognitive-commercial Information score gap shrinks by only **5.6%**, suggesting the advantage is not explained by response length alone.
 
 ## Citation
 
