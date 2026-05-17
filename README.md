@@ -1,4 +1,4 @@
-# Healing Requires More Than Helpfulness: Cognitive-Inspired Preference Optimization for Therapeutically Paced Emotional Support Conversations
+# Beyond Helpfulness: Cognitive-Inspired Preference Construction for Therapeutically Paced Emotional Support Conversations
 
 > **Paper**: [arXiv link — to be added upon submission]
 > **Base framework**: Built on [CSO (Chain-of-Strategy Optimization)](https://arxiv.org/abs/2503.05362)
@@ -7,11 +7,11 @@
 
 ## Overview
 
-This repository contains code for our paper on cognitive-guided preference optimization for Emotional Support Conversations (ESC). Two main contributions:
+This repository contains code for our paper on cognitively inspired preference-data construction for Emotional Support Conversations (ESC). Two main contributions:
 
-**1. Cognitive-guided preference optimization** — Five prefrontal cognitive regulation principles (Emotion-Validation-First, Non-Judgment, Gentle Cognitive Guidance, Risk Awareness, Natural Conversational Flow) injected into the MCTS-based preference construction pipeline of CSO, improving therapeutic depth on LLaMA-3.1-8B and Qwen-2.5-7B.
+**1. CogCSO+MCTS preference construction** — Five cognitively inspired regulation principles (Emotion-Validation-First, Non-Judgment, Gentle Cognitive Guidance, Risk Awareness, Natural Conversational Flow) injected into the CSO+MCTS preference-data construction pipeline. Base and Cognitive models are both DPO/LoRA-tuned; the only difference is whether their preference data come from the original CSO+MCTS pipeline or our CogCSO+MCTS variant. Training on CogCSO+MCTS-constructed data improves Information and Strategy scores on LLaMA-3.1-8B and Qwen-2.5-7B.
 
-**2. Verbosity Tax identification** — A systematic evaluator bias where LLM judges favor shorter responses over therapeutically complete ones when not explicitly instructed otherwise:
+**2. Verbosity Tax hypothesis** — A verbosity-related evaluation pattern in LLM-as-a-judge settings: evaluators tend to favor shorter, more conversational responses unless support-content completeness is explicitly emphasized.
 
 | Protocol | Llama-Cog vs GPT-4o | Llama-Cog vs Claude-Sonnet |
 |---|---|---|
@@ -88,8 +88,8 @@ After OLS regression controlling for response length, the cognitive-commercial I
 ## Citation
 
 ```bibtex
-@article{yao2026healing,
-  title={Healing Requires More Than Helpfulness: Cognitive-Inspired Preference Optimization for Therapeutically Paced Emotional Support Conversations},
+@article{yao2026beyond,
+  title={Beyond Helpfulness: Cognitive-Inspired Preference Construction for Therapeutically Paced Emotional Support Conversations},
   author={Yao, Jichen},
   year={2026}
 }
