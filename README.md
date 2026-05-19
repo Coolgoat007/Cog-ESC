@@ -28,11 +28,17 @@ This repository contains code for our paper on cognitively inspired preference-d
 ├── change_data.py / change_data_kto.py  # Convert to DPO / KTO format
 ├── util.py                              # Shared utilities
 ├── run_base.py                          # Run base model training
-├── run_full_cognitive.py                # Run cognitive-guided training
+├── run_full_cognitive.py                # Run cognitive-guided training (reward weights: 0.1/0.1/0.1/0.6/0.1)
 ├── run_ablation_cognitive.py            # Run ablation (w/o Emotion-Validation-First)
 ├── llm_eval_with_baselines.py           # Pointwise evaluation
 ├── pairwise_eval_v2_with_baselines.py   # Pairwise evaluation (V2-Depth protocol)
 ├── sequence_eval_llm_v2_with_baselines.py  # Sequencing behavior evaluation
+├── significance_test.py                 # Paired t-test + Wilcoxon signed-rank tests
+├── ablation_experiments_qwen/           # Ablation eval data (Qwen-2.5-7B backbone)
+│   ├── eval_{base,cognitive,ablation}_qwens_eval_details_qwen.jsonl  # Pointwise scores
+│   ├── eval_{base,cognitive,ablation}_qwens_eval_summary_qwen.txt    # Score summaries
+│   ├── pairwise_eval_v2_details_qwen_cognitive_ablation.jsonl        # Pairwise results
+│   └── pairwise_eval_v2_summary_qwen_cognitive_ablation.txt          # 58.3% win rate summary
 └── supplemental_eval/                   # Verbosity Tax experiments
 ```
 
@@ -64,6 +70,10 @@ python pairwise_eval_v2_with_baselines.py   # pairwise preferences (V2-Depth)
 python sequence_eval_llm_v2_with_baselines.py  # sequencing behavior
 python significance_test.py                 # paired t-test + Wilcoxon signed-rank (Cognitive vs Ablation)
 ```
+
+> **Pre-computed ablation results** are available in `ablation_experiments_qwen/` (Qwen-2.5-7B backbone).
+> The pairwise ablation comparison (Full Cognitive vs. Ablation, V2-Depth, N=682) yields a **58.3% decisive win rate**
+> (372W / 266L / 44T); raw judgments are in `pairwise_eval_v2_details_qwen_cognitive_ablation.jsonl`.
 
 ### 5. Reproduce Verbosity Tax experiments
 See [`supplemental_eval/README.md`](supplemental_eval/README.md).
