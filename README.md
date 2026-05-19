@@ -62,6 +62,7 @@ python change_data.py       # DPO format
 python llm_eval_with_baselines.py           # pointwise scores
 python pairwise_eval_v2_with_baselines.py   # pairwise preferences (V2-Depth)
 python sequence_eval_llm_v2_with_baselines.py  # sequencing behavior
+python significance_test.py                 # paired t-test + Wilcoxon signed-rank (Cognitive vs Ablation)
 ```
 
 ### 5. Reproduce Verbosity Tax experiments
