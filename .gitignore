@@ -47,7 +47,9 @@ judge_of_chatgpt.txt
 ESC-Pro-ablation_no_validation_first.json
 *.png
 final_report_*.tex
-ablation_experiments_qwen/
+# ablation_experiments_qwen/ is tracked (paper reproducibility data)
+!ablation_experiments_qwen/
+!ablation_experiments_qwen/**
 
 # Supplemental eval: internal working files
 supplemental_eval/*.log
